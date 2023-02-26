@@ -1,0 +1,14 @@
+services:
+  web:
+    build: ./docker
+    ports:
+      - 80:80
+  db:
+    image: mysql:8
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: foo
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    ports:
+      - 3306:3306
