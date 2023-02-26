@@ -3,6 +3,9 @@ services:
     build: ./docker
     ports:
       - 80:80
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
   db:
     image: mysql:8
     environment:
