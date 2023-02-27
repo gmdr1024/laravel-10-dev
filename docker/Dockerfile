@@ -25,4 +25,6 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY ./entrypoint.sh /
 RUN chmod 755 /entrypoint.sh
+RUN usermod -u 1000 apache \
+  && groupmod -g 1000 apache
 ENTRYPOINT ["/entrypoint.sh"]
