@@ -2,9 +2,11 @@ services:
   web:
     build: ./docker
     ports:
-      - 80:80
+      - 127.0.0.1:80:80
+      - 127.0.0.1:8000:8000
     volumes:
-      - ./src:/var/www/html
+      - ./src/laravel-10-dev:/var/www/html
+      - ./docker/web/vhost.conf:/etc/httpd/conf.d/vhost.conf
     working_dir: /var/www/html
   db:
     image: mysql:8
