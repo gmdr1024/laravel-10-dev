@@ -19,6 +19,7 @@ php-fileinfo \
 php-json \
 php-mbstring \
 php-pdo \
+php-mysqlnd \
 php-tokeniser \
 php-xml
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
